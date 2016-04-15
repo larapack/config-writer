@@ -48,13 +48,13 @@ class Repository extends BaseRepository
 
     protected function ensurePathsExists($location)
     {
-        $parts = explode('/', $location);
+        $parts = explode(DIRECTORY_SEPARATOR, $location);
 
         $current = '';
 
         foreach ($parts as $index => $part) {
             if (!empty($part)) {
-                $current .= '/';
+                $current .= DIRECTORY_SEPARATOR;
 
                 if ($this->disk()->isDirectory($current) == false) {
                     $this->disk()->makeDirectory($current);
@@ -75,7 +75,7 @@ class Repository extends BaseRepository
 
         foreach ($parts as $path) {
             if ($response != '') {
-                $response .= '/';
+                $response .= DIRECTORY_SEPARATOR;
             }
 
             $response .= $path;
@@ -88,7 +88,7 @@ class Repository extends BaseRepository
     {
         $file = $this->getCoreFile($this->name);
 
-        return base_path('config/'.$file.'.php');
+        return base_path('config'.DIRECTORY_SEPARATOR.$file.'.php');
     }
 
     protected function prepareContent($from, $validate = true)
