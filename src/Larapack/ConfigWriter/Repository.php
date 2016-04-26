@@ -15,7 +15,7 @@ class Repository extends BaseRepository
     {
         $this->name = $name;
 
-        parent::__construct(Config::get($name));
+        parent::__construct(Config::get($name, []));
     }
 
     public function save($from = null, $to = null, $validate = true)
