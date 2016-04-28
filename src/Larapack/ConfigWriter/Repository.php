@@ -50,11 +50,11 @@ class Repository extends BaseRepository
     {
         $parts = explode(DIRECTORY_SEPARATOR, $location);
 
-		array_pop($parts);
-		$path = implode(DIRECTORY_SEPARATOR, $parts);
-		
+        array_pop($parts);
+        $path = implode(DIRECTORY_SEPARATOR, $parts);
+
         if ($this->disk()->isDirectory($path) == false) {
-			$this->ensurePathsExists($path);
+            $this->ensurePathsExists($path);
             $this->disk()->makeDirectory($path);
         }
     }
