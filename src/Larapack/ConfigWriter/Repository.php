@@ -50,18 +50,12 @@ class Repository extends BaseRepository
     {
         $parts = explode(DIRECTORY_SEPARATOR, $location);
 
-        $current = '';
-
-        foreach ($parts as $index => $part) {
-            if (!empty($part)) {
-                $current .= DIRECTORY_SEPARATOR;
-
-                if ($this->disk()->isDirectory($current) == false) {
-                    $this->disk()->makeDirectory($current);
-                }
-
-                $current .= $part;
-            }
+		array_pop($parts);
+		$path = implode(DIRECTORY_SEPARATOR, $parts);
+		
+        if ($this->disk()->isDirectory($path) == false) {
+			$this->ensurePathsExists($path);
+            $this->disk()->makeDirectory($path);
         }
     }
 
