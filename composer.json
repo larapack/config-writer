@@ -6,7 +6,7 @@
     "type": "package",
     "autoload": {
         "psr-4": {
-            "": "src/"
+            "Larapack\\ConfigWriter\\": "src/"
         }
     }
 }
