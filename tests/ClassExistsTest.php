@@ -4,13 +4,11 @@ namespace Larapack\ConfigWriter\Tests;
 use PHPUnit_Framework_TestCase;
 use Larapack\ConfigWriter;
 
-class ClassExistsTest
-    extends
-        PHPUnit_Framework_TestCase
+class ClassExistsTest extends PHPUnit_Framework_TestCase
 {
 
 
-    public function ClassNameProvider()
+    public function classNameProvider()
     {
         return [
             [
@@ -23,7 +21,7 @@ class ClassExistsTest
     }
 
     /**
-    * @dataProvider ClassNameProvider
+    * @dataProvider classNameProvider
     */
     public function testClassExists($className)
     {

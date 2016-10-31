@@ -6,13 +6,11 @@ use Illuminate\Container\Container;
 use Larapack\ConfigWriter\Repository;
 use PHPUnit_Framework_TestCase;
 
-class ReadmeExampleTest
-    extends
-        PHPUnit_Framework_TestCase
+class ReadmeExampleTest extends PHPUnit_Framework_TestCase
 {
 
 
-    public function ReadmeExampleTestProvider()
+    public function readmeExampleTestProvider()
     {
         return [
             [
@@ -28,7 +26,7 @@ class ReadmeExampleTest
     }
 
     /**
-    * @dataProvider ReadmeExampleTestProvider
+    * @dataProvider readmeExampleTestProvider
     */
     public function testReadmeExample(
         $repository,
