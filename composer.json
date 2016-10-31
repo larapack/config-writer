@@ -8,5 +8,8 @@
         "psr-4": {
             "Larapack\\ConfigWriter\\": "src/"
         }
+    },
+    "require-dev": {
+        "laravel/framework": "^5.3"
     }
 }
