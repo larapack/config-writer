@@ -6,7 +6,10 @@
     "type": "package",
     "autoload": {
         "psr-4": {
-            "": "src/"
+            "Larapack\\ConfigWriter\\": "src/"
         }
+    },
+    "require-dev": {
+        "laravel/framework": "^5.3"
     }
 }
