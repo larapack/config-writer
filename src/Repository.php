@@ -17,7 +17,22 @@ class Repository extends BaseRepository
 
         parent::__construct(Config::get($name, []));
     }
+    
+    /**
+     * Return self to allow chain of set and save.
+     *
+     * @param array|string $key
+     * @param null $value
+     * 
+     * @return $this
+     */
+    public function set($key, $value = null)
+    {
+        parent::set($key, $value);
 
+        return $this;
+    }
+    
     public function save($from = null, $to = null, $validate = true)
     {
         if ($from === null) {
